@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main>
+      <section
+        id="hero"
+        class="h-screen bg-[#060405] flex items-center justify-center gap-20 relative"
+        style="box-sizing: border-box"
+      >
+        <div
+          class="rounded-full h-40 w-40 opacity-15 bg-white filter blur-[19.4px] absolute left-0 top-0"
+        ></div>
+
+        <div
+          class="rounded-full h-72 w-72 opacity-15 bg-white filter blur-[19.4px] absolute right-0 bottom-0"
+        ></div>
+
+        <div class="img-wrapper flex z-10">
+          <img src="./assets/images/profile.svg" alt="profile-images" />
+        </div>
+
+        <div class="w-1/2 text-white flex flex-col gap-5" id="get-started">
+          <p class="text-xl">HI! I'm Faid Fadjri</p>
+          <h1 class="text-5xl font-bold">
+            DEVELOPER <span class="text-[#FCC331]">| DESIGNER</span>
+          </h1>
+          <p>
+            Passionate full-stack developer with 3 years background in
+            programming fields. With graphic design skills enable me to create
+            amazing application as developer and graphic designer
+          </p>
+
+          <div id="button-group" class="flex gap-3">
+            <a
+              class="border border-white cursor-pointer bg-white text-black font-medium w-fit px-5 py-2 rounded-sm"
+            >
+              Hire Me
+            </a>
+            <a
+              class="border border-white cursor-pointer font-medium w-fit px-5 py-2 rounded-sm"
+            >
+              See My Work
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="./assets/images/line-flow.svg"
+          alt="Line Flow"
+          class="absolute bottom-0 left-0 w-11/12 z-5"
+        />
+      </section>
+    </main>
+  </body>
+</html>
