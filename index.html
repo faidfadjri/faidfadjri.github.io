@@ -3,13 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Module -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    />
+
+    <title>Faid Fadjri</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.svg"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    <main>
+    <main class="bg-[#060405]">
+      <!-- Navbar -->
+      <nav
+        class="sticky mx-5 top-5 py-2 rounded-full flex flex-row items-center justify-between bg-white px-5 pr-10 z-30 shadow-sm border border-gray-100"
+      >
+        <div class="flex">
+          <div class="flex items-center gap-4" id="brand">
+            <img src="./assets/images/logo.svg" alt="brand" class="w-8 h-8" />
+            <h1 class="text-lg font-bold">Faid Fadjri</h1>
+          </div>
+        </div>
+
+        <ul class="hidden md:flex items-center gap-5 font-semibold">
+          <li>
+            <a
+              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
+              href="#hero"
+            >
+              <img
+                src="./assets/images/icons/home.svg"
+                alt="Home Icon"
+                class="w-5 h-5"
+              />
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
+              href="#journey"
+            >
+              <img
+                src="./assets/images/icons/journey.svg"
+                alt="Journey Icon"
+                class="w-5 h-5"
+              />
+              Journey
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
+              href="#portfolio"
+            >
+              <img
+                src="./assets/images/icons/portfolio.svg"
+                alt="Portfolio Icon"
+                class="w-5 h-5"
+              />
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
+              href="#contact"
+            >
+              <img
+                src="./assets/images/icons/contact.svg"
+                alt="Contact Icon"
+                class="w-5 h-5"
+              />
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
       <section
         id="hero"
-        class="h-screen bg-[#060405] flex items-center justify-center gap-20 relative"
+        class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-20 relative px-5 md:px-0"
         style="box-sizing: border-box"
       >
         <div
@@ -20,31 +111,44 @@
           class="rounded-full h-72 w-72 opacity-15 bg-white filter blur-[19.4px] absolute right-0 bottom-0"
         ></div>
 
-        <div class="img-wrapper flex z-10">
-          <img src="./assets/images/profile.svg" alt="profile-images" />
+        <div class="img-wrapper flex w-44 md:w-96 z-10">
+          <img
+            src="./assets/images/profile.svg"
+            class="w-full h-full object-contain"
+            alt="profile-images"
+          />
         </div>
 
-        <div class="w-1/2 text-white flex flex-col gap-5" id="get-started">
-          <p class="text-xl">HI! I'm Faid Fadjri</p>
-          <h1 class="text-5xl font-bold">
-            DEVELOPER <span class="text-[#FCC331]">| DESIGNER</span>
-          </h1>
-          <p>
+        <div
+          class="w-full md:w-1/2 text-white flex flex-col gap-4"
+          id="get-started"
+        >
+          <div class="flex flex-col gap-2">
+            <p class="text-lg font-semibold">HI! I'm Faid Fadjri</p>
+            <h2 class="text-4xl font-black">
+              DEVELOPER <span class="text-[#FCC331]">| DESIGNER</span>
+            </h2>
+          </div>
+          <p class="text-sm">
             Passionate full-stack developer with 3 years background in
             programming fields. With graphic design skills enable me to create
             amazing application as developer and graphic designer
           </p>
 
-          <div id="button-group" class="flex gap-3">
+          <div class="flex gap-3 z-10">
             <a
-              class="border border-white cursor-pointer bg-white text-black font-medium w-fit px-5 py-2 rounded-sm"
+              target="_self"
+              href="mailto:faidfadjri@gmail.com?subject=Job%20Offering&body=Hi%20Faid%20Fadjri%2C%0D%0AI%20have%20job%20offer%20for%20you%20.."
+              class="border border-white cursor-pointer bg-white text-black font-medium w-fit px-5 py-2 justify-center rounded-sm flex items-center gap-3 hover:bg-transparent hover:text-white duration-300"
             >
               Hire Me
+              <i class="fa-regular fa-envelope"></i>
             </a>
             <a
-              class="border border-white cursor-pointer font-medium w-fit px-5 py-2 rounded-sm"
+              class="border border-white cursor-pointer font-medium w-fit px-5 py-2 rounded-sm flex items-center gap-3 hover:bg-white duration-300 hover:text-[#060405]"
             >
               See My Work
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -55,6 +159,208 @@
           class="absolute bottom-0 left-0 w-11/12 z-5"
         />
       </section>
+      <!-- End Hero Section -->
+
+      <!-- Journey -->
+      <section
+        id="journey"
+        class="min-h-screen bg-white flex flex-col items-center p-5 box-border relative"
+      >
+        <img
+          src="./assets/images/city.png"
+          alt="city"
+          class="absolute w-full absolute bottom-0 object-contain z-5"
+        />
+
+        <div
+          class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10"
+          id="headline"
+        >
+          <h2 class="text-3xl font-extrabold">MY JOURNEY</h2>
+          <p class="text-sm">
+            I began with no knowledge but fell in love with graphic design,
+            creating with pixels and colors. Then i have fall in love with IoT
+            and Software Development Technology
+          </p>
+        </div>
+
+        <hr class="my-2" />
+
+        <!-- Experience -->
+
+        <div class="experience mt-5 z-10 w-full">
+          <div
+            class="flex flex-col gap-2 md:gap-0 md:grid md:grid-rows-4 md:grid-cols-2"
+          >
+            <div
+              class="md:border-r border-black w-full p-2 md:pr-5 col-start-1 row-start-1 relative md:flex md:flex-col md:items-end"
+            >
+              <div
+                class="hidden md:block rounded-full absolute h-4 w-4 bg-black -right-[8px] top-0"
+              ></div>
+
+              <h3 class="font-bold text-lg mb-1">Freelance Graphic Designer</h3>
+              <hr class="my-2" />
+              <p class="leading-tight text-justify text-sm md:text-end">
+                Start by being graphic designer freelancer creating a few
+                graphic design like Vector Design, Flat Illustration Flyer etc.
+              </p>
+
+              <div class="flex items-center mt-4 gap-3">
+                <div
+                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                >
+                  2018-01-01 - Present
+                </div>
+                <a
+                  href="https://www.instagram.com/faidfxdjri/"
+                  target="_blank"
+                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                  >See My Gallery
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="md:border-l border-black w-full p-2 md:pl-5 col-start-2 row-start-2 -ml-[0.5px] relative"
+            >
+              <div
+                class="hidden md:block rounded-full absolute h-4 w-4 bg-black -left-[8px] top-3"
+              ></div>
+
+              <h3 class="font-bold text-lg mb-1 flex items-center gap-3">
+                IoT Engineer Intern
+                <img
+                  src="https://static.wixstatic.com/media/55cb65_04b1f37faf204356bc5708cb38508fa7~mv2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/metani_logo-min_edited.png"
+                  alt="mertani-logo"
+                  class="w-6 h-6"
+                />
+              </h3>
+              <hr class="my-2" />
+              <p class="leading-tight text-justify text-sm w-96">
+                IoT Software Engineer at Mertani, an agricultural tech startup
+                company. Help manage their IoT Devices Code.
+              </p>
+
+              <div class="flex items-center mt-4 gap-3">
+                <div
+                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                >
+                  2019-12-01 - 2020-03-01
+                </div>
+                <a
+                  href="https://www.instagram.com/faidfxdjri/"
+                  target="_blank"
+                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                  >See My Labs
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-3 relative md:flex md:flex-col md:items-end md:px-5"
+            >
+              <div
+                class="hidden md:block rounded-full absolute h-4 w-4 bg-black -right-[8px] top-3"
+              ></div>
+
+              <h3 class="font-bold text-lg mb-1">IT Support Intern</h3>
+              <hr class="my-2" />
+              <p class="leading-tight text-justify text-sm md:w-96">
+                Maintain office network and troubleshooting computer make sure
+                all operation all working properly
+              </p>
+            </div>
+
+            <div
+              class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-4 relative md:flex md:flex-col md:items-end md:px-5"
+            >
+              <div
+                class="hidden md:block rounded-full absolute h-4 w-4 bg-black -right-[8px] top-3"
+              ></div>
+
+              <h3 class="font-bold text-lg mb-1">
+                Business Dev'l | Fullstack Developer
+              </h3>
+              <hr class="my-2" />
+              <p class="leading-tight text-justify text-sm md:w-96 md:text-end">
+                Working as business development role concurrently as fullstack
+                developer
+              </p>
+
+              <div class="flex items-center mt-4 gap-3">
+                <div
+                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                >
+                  2020-03-01 - Present
+                </div>
+                <a
+                  href="https://www.instagram.com/faidfxdjri/"
+                  target="_blank"
+                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                  >See My Portfolio
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Experience -->
+      </section>
+      <!-- End Journey -->
+
+      <!-- Working -->
+      <section id="work" class="bg-white flex flex-col py-10 items-center p-5">
+        <div
+          class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10 mb-5"
+          id="headline"
+        >
+          <h2 class="text-3xl font-extrabold">HOW I WORK</h2>
+          <p class="text-sm">
+            Continuously learn new things, collaborate with people, and ensure
+            that the projects I undertake are not only useful but also
+            applicable across various industries.
+          </p>
+        </div>
+
+        <hr class="my-2" />
+
+        <img
+          src="./assets/images/docs.png"
+          alt="documentation"
+          class="w-11/12"
+        />
+      </section>
+      <!-- End Working -->
+
+      <!-- Certificate -->
+      <section
+        id="work"
+        class="bg-white min-h-screen flex flex-col py-10 items-center px-5 md:px-10"
+      >
+        <div
+          class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10"
+          id="headline"
+        >
+          <h2 class="text-3xl font-extrabold">CERTIFICATE</h2>
+          <p class="text-sm">
+            A lot of my skill-set are learn autotidact but i have a few
+            certification after joining some online programming courses
+          </p>
+        </div>
+
+        <hr class="my-2" />
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <img src="./assets/images/android.png" alt="android" />
+          <img src="./assets/images/kotlin.png" alt="kotlin" />
+          <img src="./assets/images/pcap.png" alt="pcap" />
+        </div>
+      </section>
+      <!-- End Certificate -->
     </main>
   </body>
 </html>
