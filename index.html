@@ -32,70 +32,88 @@
     <main class="bg-[#060405]">
       <!-- Navbar -->
       <nav
-        class="sticky mx-5 top-5 py-2 rounded-full flex flex-row items-center justify-between bg-white px-5 pr-10 z-30 shadow-sm border border-gray-100"
+        class="sticky mx-5 top-5 py-2 rounded-full flex flex-row items-center justify-between bg-white px-5 pr-10 z-30 shadow-sm border border-gray-100 z-30"
       >
-        <div class="flex">
-          <div class="flex items-center gap-4" id="brand">
-            <img src="./assets/images/logo.svg" alt="brand" class="w-8 h-8" />
-            <h1 class="text-lg font-bold">Faid Fadjri</h1>
-          </div>
+        <div class="flex items-center gap-4" id="brand">
+          <img
+            src="./assets/images/logo.svg"
+            alt="brand"
+            class="w-8 h-8 hidden md:block"
+          />
+          <h1 class="text-lg font-bold">Faid Fadjri</h1>
         </div>
 
-        <ul class="hidden md:flex items-center gap-5 font-semibold">
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button
+            id="mobile-menu-btn"
+            class="text-gray-600 hover:text-gray-800 focus:outline-none"
+          >
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+
+        <ul class="hidden md:flex items-center gap-5 font-semibold bg-white">
           <li>
-            <a
-              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
-              href="#hero"
-            >
-              <img
-                src="./assets/images/icons/home.svg"
-                alt="Home Icon"
-                class="w-5 h-5"
-              />
-              Home
-            </a>
+            <a class="nav-link" href="#hero">Home</a>
           </li>
           <li>
-            <a
-              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
-              href="#journey"
-            >
-              <img
-                src="./assets/images/icons/journey.svg"
-                alt="Journey Icon"
-                class="w-5 h-5"
-              />
-              Journey
-            </a>
+            <a class="nav-link" href="#journey">Journey</a>
           </li>
           <li>
-            <a
-              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
-              href="#portfolio"
-            >
-              <img
-                src="./assets/images/icons/portfolio.svg"
-                alt="Portfolio Icon"
-                class="w-5 h-5"
-              />
-              Portfolio
-            </a>
+            <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a
-              class="flex items-center gap-2 border-b-2 duration-300 border-white hover:border-[#FCC331] px-2 py-2"
-              href="#contact"
-            >
-              <img
-                src="./assets/images/icons/contact.svg"
-                alt="Contact Icon"
-                class="w-5 h-5"
-              />
-              Contact
-            </a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
+      <!-- End Navbar -->
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed inset-0 bg-gray-100 z-40 hidden"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-mobile-menu"
+            class="text-gray-600 hover:text-gray-800 focus:outline-none"
+          >
+            <i class="fas fa-times fa-lg"></i>
+          </button>
+        </div>
+        <div class="flex flex-col items-center gap-5 md:gap-0">
+          <a class="mobile-nav-link" href="#hero">Home</a>
+          <a class="mobile-nav-link" href="#journey">Journey</a>
+          <a class="mobile-nav-link" href="#portfolio">Portfolio</a>
+          <a class="mobile-nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <script>
+        // Mobile Menu Toggle
+        document
+          .getElementById("mobile-menu-btn")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+          });
+
+        // Close Mobile Menu
+        document
+          .getElementById("close-mobile-menu")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
+          });
+
+        // Close Mobile Menu on link click
+        var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+        mobileNavLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
+          });
+        });
+      </script>
 
       <!-- Hero Section -->
       <section
@@ -146,6 +164,7 @@
             </a>
             <a
               class="border border-white cursor-pointer font-medium w-fit px-5 py-2 rounded-sm flex items-center gap-3 hover:bg-white duration-300 hover:text-[#060405]"
+              href="#portfolio"
             >
               See My Work
               <i class="fa-solid fa-arrow-right"></i>
@@ -222,6 +241,7 @@
               </div>
             </div>
 
+            <hr class="my-3 md:hidden" />
             <div
               class="md:border-l border-black w-full p-2 md:pl-5 col-start-2 row-start-2 -ml-[0.5px] relative"
             >
@@ -258,7 +278,7 @@
                 </a>
               </div>
             </div>
-
+            <hr class="my-3 md:hidden" />
             <div
               class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-3 relative md:flex md:flex-col md:items-end md:px-5"
             >
@@ -266,14 +286,24 @@
                 class="hidden md:block rounded-full absolute h-4 w-4 bg-black -right-[8px] top-3"
               ></div>
 
-              <h3 class="font-bold text-lg mb-1">IT Support Intern</h3>
+              <h3
+                class="font-bold text-lg mb-1 flex items-center flex-row-reverse gap-5"
+              >
+                IT Support Intern
+
+                <img
+                  src="https://akastra.id/assets/images/icon/logo.png"
+                  alt="akastra logo"
+                  class="w-16 object-contain"
+                />
+              </h3>
               <hr class="my-2" />
               <p class="leading-tight text-justify text-sm md:w-96">
                 Maintain office network and troubleshooting computer make sure
                 all operation all working properly
               </p>
             </div>
-
+            <hr class="my-3 md:hidden" />
             <div
               class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-4 relative md:flex md:flex-col md:items-end md:px-5"
             >
@@ -281,8 +311,16 @@
                 class="hidden md:block rounded-full absolute h-4 w-4 bg-black -right-[8px] top-3"
               ></div>
 
-              <h3 class="font-bold text-lg mb-1">
+              <h3
+                class="font-bold text-lg mb-1 flex items-center flex-row-reverse gap-5"
+              >
                 Business Dev'l | Fullstack Developer
+
+                <img
+                  src="https://akastra.id/assets/images/icon/logo.png"
+                  alt="akastra logo"
+                  class="w-16 object-contain"
+                />
               </h3>
               <hr class="my-2" />
               <p class="leading-tight text-justify text-sm md:w-96 md:text-end">
@@ -297,7 +335,7 @@
                   2020-03-01 - Present
                 </div>
                 <a
-                  href="https://www.instagram.com/faidfxdjri/"
+                  href="#portfolio"
                   target="_blank"
                   class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
                   >See My Portfolio
@@ -305,6 +343,7 @@
                 </a>
               </div>
             </div>
+            <hr class="my-3 md:hidden" />
           </div>
         </div>
 
@@ -339,7 +378,7 @@
       <!-- Certificate -->
       <section
         id="work"
-        class="bg-white min-h-screen flex flex-col py-10 items-center px-5 md:px-10"
+        class="bg-white flex flex-col py-10 items-center px-5 md:px-10"
       >
         <div
           class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10"
@@ -361,6 +400,244 @@
         </div>
       </section>
       <!-- End Certificate -->
+
+      <!-- Portfolio -->
+      <section
+        id="portfolio"
+        class="min-h-screen bg-[#F6F6F6] flex flex-col py-5 items-center px-5 md:px-10"
+      >
+        <div
+          class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10"
+          id="headline"
+        >
+          <h2 class="text-3xl font-extrabold">PORTFOLIO</h2>
+          <p class="text-sm">
+            I have been create a lot of application to help my current company
+            work efficiently and made an impact for industry
+          </p>
+        </div>
+
+        <hr class="my-2" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-5">
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/akastra-website.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Akastra Company Profile</h4>
+            <hr class="my-2" />
+            <p>
+              Company profile website to help customer find workshop easily.
+              Make an appointment for services and improve the company's sales.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/ksc.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">KSC Motor Landing Page</h4>
+            <hr class="my-2" />
+            <p>
+              Company profile website to help customer find workshop easily.
+              Make an appointment for services and improve the company's sales.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/easytask.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Easytask</h4>
+            <hr class="my-2" />
+            <p>
+              The task management system implemented at Akastra Toyota and KSC
+              Motor Company Help managament Communication with BOD
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/bni.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">BNI Premises Checksheet</h4>
+            <hr class="my-2" />
+            <p>
+              an application used by Bank Negara Indonesia which is one of the
+              biggest bank company under goverment in indonesia to conduct
+              checks at each of its outlets in various branches across
+              Indonesia.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/akastra-mobile.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Akastra Mobile - No Published</h4>
+            <hr class="my-2" />
+            <p>
+              an Akastra Toyota android mobile application company's for their
+              customer.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/wac.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Walk Around Check</h4>
+            <hr class="my-2" />
+            <p>
+              A useful Progressive Web App (PWA) for assisting Service Advisor
+              teams in performing PPS or Pre Production Services.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/parking.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">E Parking</h4>
+            <hr class="my-2" />
+            <p>
+              an application for helping the parking areas monitoring. Help to
+              find a root cause of crowded parking areas.
+            </p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/amdk.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Bottled Water Business</h4>
+            <hr class="my-2" />
+            <p>Creating new business under cooperation in Akastra Toyota.</p>
+          </div>
+
+          <div class="flex flex-col bg-white p-5 rounded-sm shadow-sm">
+            <img
+              src="./assets/images/portfolio/cafe.png"
+              alt="Akastra Website"
+              class="object-contain w-full mb-5"
+            />
+
+            <h4 class="text-lg font-bold">Mini Cafe Business</h4>
+            <hr class="my-2" />
+            <p>
+              Mini cafe inside Akastra Toyota under Akastra Link Cooperation
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio -->
+
+      <!-- Footer -->
+      <section class="w-full bg-white flex flex-col items-center" id="contact">
+        <div class="h-2 w-full bg-black"></div>
+
+        <div
+          class="bg-[#FDBE1C] w-full flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center py-8 px-10"
+        >
+          <div class="flex flex-col">
+            <img
+              src="https://media.licdn.com/dms/image/D5603AQGarcQF8zw8Tw/profile-displayphoto-shrink_400_400/0/1701250600430?e=1709164800&v=beta&t=Nc5HqSjrfmUibke1D6iRqETXMIETHZ-u73dQcFABQww"
+              alt="Profile Images"
+              class="w-40 rounded-full"
+            />
+
+            <br class="my-2" />
+            <div class="text-center">
+              <h5 class="text-md font-semibold">MOHAMAD FAID FADJRI</h5>
+              <p class="italic">Fullstack Developer</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-10">
+            <div class="flex flex-col">
+              <h5 class="text-md font-semibold">Connect With Me</h5>
+              <ul>
+                <li>
+                  <a href="https://instagram.com/faidfxdjri"> instagram </a>
+                </li>
+
+                <li>
+                  <a href="https://linkedin.com/in/faidfadjri"> Linkedin </a>
+                </li>
+
+                <li>
+                  <a href="https://github.com/faidfadjri"> Github </a>
+                </li>
+
+                <li>
+                  <a href="https://web.facebook.com/vaidz.capoeng">
+                    Facebook
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col">
+              <h5 class="text-md font-semibold">Contact Me</h5>
+              <ul>
+                <li>
+                  <a
+                    href="mailto:faidfadjri@gmail.com?subject=Job%20Offering&body=Hi%20Faid%20Fadjri%2C%0D%0AI%20have%20job%20offer%20for%20you%20.."
+                  >
+                    Email
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://wa.me/+6285848238397" target="_blank">
+                    Whatsapp
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./assets/images/footer-image.svg"
+          alt="footer-image"
+          class="-mt-5 w-full object-contain"
+        />
+
+        <a
+          href="https://www.figma.com/file/HmtaMflf2rVnBLT6vehRwB/Portofolio?type=design&node-id=331%3A53&mode=design&t=e7wGpg56bICHXTgD-1"
+          class="self-end pr-5 pb-5"
+        >
+          <p class="text-sm">
+            design with figma by faid fadjri
+            <strong>@2023 All Right Reserved</strong>
+          </p>
+        </a>
+      </section>
+      <!-- End Footer  -->
     </main>
   </body>
 </html>
