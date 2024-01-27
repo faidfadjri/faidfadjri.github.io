@@ -6,6 +6,12 @@
 
     <!-- Module -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
@@ -108,23 +114,23 @@
       <script>
         // Mobile Menu Toggle
         document
-          .getElementById("mobile-menu-btn")
-          .addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
+          .getElementById('mobile-menu-btn')
+          .addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
           });
 
         // Close Mobile Menu
         document
-          .getElementById("close-mobile-menu")
-          .addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.add("hidden");
+          .getElementById('close-mobile-menu')
+          .addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.add('hidden');
           });
 
         // Close Mobile Menu on link click
-        var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(function (link) {
-          link.addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.add("hidden");
+          link.addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.add('hidden');
           });
         });
       </script>
@@ -195,13 +201,13 @@
       <!-- End Hero Section -->
 
       <section
-        class="w-full py-5 bg-gray-200 flex flex-col justify-center items-center gap-10"
+        class="w-full pt-5 bg-gray-200 flex flex-col justify-center items-center gap-10"
       >
         <h2 class="font-medium text-sm">Companies that trust me</h2>
-        <div class="flex gap-10">
+        <div class="flex gap-10 overflow-auto p-5">
           <img
-            src="https://static.wixstatic.com/media/55cb65_04b1f37faf204356bc5708cb38508fa7~mv2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/metani_logo-min_edited.png"
-            alt="akastra"
+            src="https://play-lh.googleusercontent.com/iJx7KzQLo7s02KxfPha5VsKSIrB98k8tPaDB1Eb7wwugHRjdQeC0n5x3Fp72ZXOyfKA"
+            alt="mertani"
             class="h-10 object-contain"
           />
 
@@ -224,12 +230,6 @@
           <img
             src="https://www.bni.co.id/Portals/1/bni-logo-id.png"
             alt="bni"
-            class="h-8 object-contain"
-          />
-
-          <img
-            src="https://www.freeiconspng.com/thumbs/honda-logo-png/red-honda-logo-motorcycle-brands-png-10.png"
-            alt="honda"
             class="h-8 object-contain"
           />
         </div>
@@ -280,16 +280,16 @@
                 graphic design like Vector Design, Flat Illustration Flyer etc.
               </p>
 
-              <div class="flex items-center mt-4 gap-3">
+              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
                 <div
-                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                  class="w-full whitespace-nowrap border border-[#FCC331] py-2 px-3 text-sm font-semibold"
                 >
                   2018-01-01 - Present
                 </div>
                 <a
                   href="https://www.instagram.com/faidfxdjri/"
                   target="_blank"
-                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                  class="w-full md:w-fit-content text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
                   >See My Gallery
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
@@ -313,22 +313,23 @@
                 />
               </h3>
               <hr class="my-2" />
-              <p class="leading-tight text-justify text-sm w-96">
+              <p class="leading-tight text-justify text-sm w-full md:w-96">
                 IoT Software Engineer at Mertani, an agricultural tech startup
                 company. Help manage their IoT Devices Code.
               </p>
 
-              <div class="flex items-center mt-4 gap-3">
+              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
                 <div
-                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold w-full md:w-fit whitespace-nowrap"
                 >
                   2019-12-01 - 2020-03-01
                 </div>
                 <a
                   href="https://www.instagram.com/stories/highlights/17936089366581322/"
                   target="_blank"
-                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
-                  >See My Labs
+                  class="w-full md:w-fit whitespace-nowrap font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                >
+                  See My Labs
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
               </div>
@@ -383,17 +384,18 @@
                 developer at Akastra Toyota
               </p>
 
-              <div class="flex items-center mt-4 gap-3">
+              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
                 <div
-                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold"
+                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold w-full whitespace-nowrap"
                 >
                   2020-03-01 - Present
                 </div>
                 <a
                   href="#portfolio"
                   target="_blank"
-                  class="text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
-                  >See My Portfolio
+                  class="w-full md:w-fit whitespace-nowrap font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                >
+                  See My Portfolio
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
               </div>
@@ -425,14 +427,15 @@
 
         <hr class="my-2" />
 
+        <!-- Desktop -->
         <div
-          class="flex flex-col md:grid grid-rows-2 grid-cols-5 w-11/12 h-fit md:h-96 items-center justify-items-center gap-2"
+          class="hidden w-full md:flex flex-row overflow-auto md:grid grid-rows-2 grid-cols-5 w-11/12 h-fit md:h-96 items-center justify-items-center gap-2"
         >
           <div class="w-full h-full rounded-md row-span-2 col-span-2">
             <img
               src="./assets/images/portfolio/annual-meeting-2023.webp"
               alt="annual-meeting-2023"
-              class="object-cover h-full rounded-sm w-full"
+              class="object-cover h-full w-full rounded-sm w-full"
               style="object-position: 80% 100%"
             />
           </div>
@@ -461,8 +464,7 @@
             <img
               src="./assets/images/portfolio/evaluation-meeting.webp"
               alt="evaluation-1-meeting"
-              class="object-cover h-full rounded-sm"
-              style="object-position: 100% 100%"
+              class="object-cover h-full w-fit md:w-full rounded-sm"
             />
           </div>
           <div class="w-full h-full rounded-md col-span-2">
@@ -471,6 +473,61 @@
               alt="evaluation-1-meeting"
               class="object-cover h-full rounded-sm w-full"
             />
+          </div>
+        </div>
+
+        <!-- On Mobile -->
+        <div
+          class="w-full flex flex-row overflow-auto md:grid grid-rows-2 grid-cols-5 w-11/12 h-fit md:h-96 items-center justify-items-center gap-2 swiper-container"
+        >
+          <!-- Add the 'swiper-wrapper' class to the parent container of your images -->
+          <div class="swiper-wrapper">
+            <div
+              class="w-full h-full rounded-md row-span-2 col-span-2 swiper-slide"
+            >
+              <img
+                src="./assets/images/portfolio/annual-meeting-2023.webp"
+                alt="annual-meeting-2023"
+                class="object-cover h-full rounded-sm w-full"
+                style="object-position: 80% 100%"
+              />
+            </div>
+            <div class="w-full h-full rounded-md row-span-1 swiper-slide">
+              <img
+                src="./assets/images/portfolio/alibaba-cloud-developer-summit.webp"
+                alt="alibaba-cloud-developer-summit"
+                class="object-cover h-full rounded-sm w-full"
+              />
+            </div>
+            <div class="w-full h-full rounded-md swiper-slide">
+              <img
+                src="./assets/images/portfolio/annual-meeting-2022.webp"
+                alt="annual-meeting-2022"
+                class="object-cover h-full w-full rounded-sm"
+              />
+            </div>
+            <div class="w-full h-full rounded-md swiper-slide">
+              <img
+                src="./assets/images/portfolio/iot.webp"
+                alt="SDY Labs"
+                class="object-cover h-full w-full rounded-sm"
+              />
+            </div>
+            <div class="w-full h-full rounded-md swiper-slide">
+              <img
+                src="./assets/images/portfolio/evaluation-meeting.webp"
+                alt="evaluation-1-meeting"
+                class="object-cover h-full rounded-sm"
+                style="object-position: 100% 100%"
+              />
+            </div>
+            <div class="w-full h-full rounded-md col-span-2 swiper-slide">
+              <img
+                src="./assets/images/portfolio/evaluation-1-meeting.webp"
+                alt="evaluation-1-meeting"
+                class="object-cover h-full rounded-sm w-full"
+              />
+            </div>
           </div>
         </div>
 
@@ -485,7 +542,7 @@
               alt="github-logo"
               class="w-5 h-5"
             />
-            Connect with me on Linkedin
+            Connect with me
           </a>
         </div>
       </section>
@@ -708,9 +765,9 @@
         <div
           class="bg-[#FDBE1C] w-full flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center py-8 px-10"
         >
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center">
             <img
-              src="https://media.licdn.com/dms/image/D5603AQGarcQF8zw8Tw/profile-displayphoto-shrink_400_400/0/1701250600430?e=1709164800&v=beta&t=Nc5HqSjrfmUibke1D6iRqETXMIETHZ-u73dQcFABQww"
+              src="./assets/images/portfolio/profile.jpg"
               alt="Profile Images"
               class="w-40 rounded-full"
             />
@@ -778,7 +835,7 @@
         <img
           src="./assets/images/footer-image.svg"
           alt="footer-image"
-          class="-mt-5 w-full h-96 object-contain"
+          class="hidden md:block md:-mt-5 w-full h-96 object-contain"
         />
 
         <a

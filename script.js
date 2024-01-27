@@ -1,8 +1,8 @@
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
 
-    const targetId = this.getAttribute("href");
+    const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
@@ -10,8 +10,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
       window.scrollTo({
         top: offsetTop,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   });
+});
+
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 10,
 });
