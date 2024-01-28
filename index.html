@@ -61,22 +61,29 @@
 
         <ul class="hidden md:flex items-center gap-5 font-semibold bg-white">
           <li>
-            <a class="nav-link" href="#hero">Home</a>
+            <a class="nav-link hover:underline" href="#hero">Home</a>
           </li>
           <li>
-            <a class="nav-link" href="#journey">Journey</a>
+            <a class="nav-link hover:underline" href="#journey">Journey</a>
           </li>
           <li>
-            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link hover:underline" href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link hover:underline" href="#contact">Contact</a>
           </li>
-          <li>
+          <li class="flex items-center gap-3">
+            <a
+              class="nav-link hover:underline"
+              href="/stack.html"
+              target="_blank"
+              >🚀 Skill Set</a
+            >
+            <hr class="border border-gray-300 h-6" />
             <a
               href="https://github.com/faidfadjri"
               target="_blank"
-              class="flex items-center gap-3 px-5 border-l border-gray-400"
+              class="flex items-center gap-3 hover:underline"
             >
               <img
                 src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
@@ -114,23 +121,23 @@
       <script>
         // Mobile Menu Toggle
         document
-          .getElementById('mobile-menu-btn')
-          .addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+          .getElementById("mobile-menu-btn")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
           });
 
         // Close Mobile Menu
         document
-          .getElementById('close-mobile-menu')
-          .addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.add('hidden');
+          .getElementById("close-mobile-menu")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
           });
 
         // Close Mobile Menu on link click
-        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
         mobileNavLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.add('hidden');
+          link.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
           });
         });
       </script>
