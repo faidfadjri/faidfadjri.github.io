@@ -1,0 +1,11 @@
+.stacks {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.stack-logo {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
