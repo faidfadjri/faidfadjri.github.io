@@ -1,3 +1,106 @@
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --color: #fcc331;
+}
+
+.circle {
+  border-radius: 9999px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.15;
+  background-color: #fff;
+  filter: blur(19.4px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.primary-color {
+  color: var(--color);
+}
+
+.primary-background {
+  background-color: var(--color);
+}
+
+.secondary-background {
+  background-color: #f6f6f6;
+}
+
+.primary-button {
+  border: 1px solid #fff;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  justify-content: center;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.outline-button {
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.outline-button:hover {
+  background-color: #fff;
+  color: #060405;
+}
+
+.work-button {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  column-gap: 10px;
+}
+
+.work-period {
+  font-size: 14px;
+  background-color: var(--color);
+  padding: 8px 15px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.work-cta {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  padding: 8px 15px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.work-cta:hover {
+  column-gap: 14px;
+  border-color: var(--color);
+}
+
+.work-description {
+  line-height: 1.25;
+  text-align: justify;
+  font-size: 14px;
+  max-width: 500px;
 }

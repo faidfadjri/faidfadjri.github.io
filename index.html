@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Module -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -35,7 +38,7 @@
     />
   </head>
   <body>
-    <main class="bg-[#060405]">
+    <main class="bg-black">
       <!-- Navbar -->
       <nav
         class="sticky mx-5 top-5 py-3 rounded-full flex flex-row items-center justify-between bg-white px-5 pr-10 z-30 shadow-md border border-gray-100 z-30"
@@ -121,23 +124,23 @@
       <script>
         // Mobile Menu Toggle
         document
-          .getElementById("mobile-menu-btn")
-          .addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
+          .getElementById('mobile-menu-btn')
+          .addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
           });
 
         // Close Mobile Menu
         document
-          .getElementById("close-mobile-menu")
-          .addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.add("hidden");
+          .getElementById('close-mobile-menu')
+          .addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.add('hidden');
           });
 
         // Close Mobile Menu on link click
-        var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(function (link) {
-          link.addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.add("hidden");
+          link.addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.add('hidden');
           });
         });
       </script>
@@ -150,10 +153,12 @@
       >
         <div
           class="rounded-full h-40 w-40 opacity-15 bg-white filter blur-[19.4px] absolute left-0 top-0"
+          style="opacity: 0.15"
         ></div>
 
         <div
           class="rounded-full h-72 w-72 opacity-15 bg-white filter blur-[19.4px] absolute right-0 bottom-0"
+          style="opacity: 0.15"
         ></div>
 
         <div class="img-wrapper flex w-44 md:w-88 lg:w-96 z-10">
@@ -171,7 +176,7 @@
           <div class="flex flex-col gap-2">
             <p class="text-lg font-semibold">HI! I'm Faid Fadjri</p>
             <h2 class="text-4xl font-black">
-              DEVELOPER <span class="text-[#FCC331]">| DESIGNER</span>
+              DEVELOPER <span class="primary-color">| DESIGNER</span>
             </h2>
           </div>
           <p class="text-sm">
@@ -184,13 +189,13 @@
             <a
               target="_self"
               href="mailto:faidfadjri@gmail.com?subject=Job%20Offering&body=Hi%20Faid%20Fadjri%2C%0D%0AI%20have%20job%20offer%20for%20you%20.."
-              class="border border-white cursor-pointer bg-white text-black font-medium w-fit px-5 py-2 justify-center rounded-sm flex items-center gap-3 hover:bg-transparent hover:text-white duration-300"
+              class="primary-button"
             >
               Hire Me
               <i class="fa-regular fa-envelope"></i>
             </a>
             <a
-              class="border border-white cursor-pointer font-medium w-fit px-5 py-2 rounded-sm flex items-center gap-3 hover:bg-white duration-300 hover:text-[#060405]"
+              class="outline-button"
               href="https://wa.me/+6285848238397?text=Hi%20Faid%20Fadjri"
               target="_blank"
             >
@@ -252,6 +257,7 @@
           src="./assets/images/city.png"
           alt="city"
           class="absolute w-full absolute bottom-0 object-contain z-5"
+          style="opacity: 0.5"
         />
 
         <div
@@ -278,38 +284,39 @@
               class="md:border-r border-black w-full p-2 md:pr-5 col-start-1 row-start-1 relative md:flex md:flex-col md:items-end"
             >
               <div
-                class="hidden md:block rounded-full absolute h-3 w-3 bg-black -right-[6px] top-0"
+                class="hidden md:block rounded-full absolute h-3 w-3 bg-black top-0"
+                style="right: -6.5px"
               ></div>
 
               <h3 class="font-bold text-lg mb-1">Freelance Graphic Designer</h3>
               <hr class="my-2" />
-              <p class="leading-tight text-justify text-sm md:text-end">
+              <p class="work-description">
                 Start by being graphic designer freelancer creating a several
                 graphic design like Vector Design, Flat Illustration Flyer etc.
               </p>
 
               <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
-                <div
-                  class="w-full whitespace-nowrap border border-[#FCC331] py-2 px-3 text-sm font-semibold"
-                >
-                  2018-01-01 - Present
-                </div>
                 <a
                   href="https://www.instagram.com/faidfxdjri/"
                   target="_blank"
-                  class="w-full md:w-fit-content text-sm font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
-                  >See My Gallery
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                  class="work-cta"
+                >
+                  <i class="fa-solid fa-arrow-left mr-2"></i>
+                  See My Gallery
                 </a>
+
+                <div class="work-period">2018-01-01 - Present</div>
               </div>
             </div>
 
             <hr class="my-3 md:hidden" />
             <div
-              class="md:border-l border-black w-full p-2 md:pl-5 col-start-2 row-start-2 -ml-[0.5px] relative"
+              class="md:border-l border-black w-full p-2 md:pl-5 col-start-2 row-start-2 relative"
+              style="margin-left: -0.4px"
             >
               <div
-                class="hidden md:block rounded-full absolute h-3 w-3 bg-black -left-[6px] top-3"
+                class="hidden md:block rounded-full absolute h-3 w-3 bg-black top-3"
+                style="left: -6.5px"
               ></div>
 
               <h3 class="font-bold text-lg mb-1 flex items-center gap-3">
@@ -321,21 +328,17 @@
                 />
               </h3>
               <hr class="my-2" />
-              <p class="leading-tight text-justify text-sm w-full md:w-96">
+              <p class="work-description">
                 IoT Software Engineer at Mertani, an agricultural tech startup
                 company. Help manage their IoT Devices Code.
               </p>
 
-              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
-                <div
-                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold w-full md:w-fit whitespace-nowrap"
-                >
-                  2019-09-01 - 2020-02-01
-                </div>
+              <div class="work-button">
+                <div class="work-period">2019-09-01 - 2020-02-01</div>
                 <a
                   href="https://www.instagram.com/stories/highlights/17936089366581322/"
                   target="_blank"
-                  class="w-full md:w-fit whitespace-nowrap font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
+                  class="work-cta"
                 >
                   See My Labs
                   <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -343,11 +346,13 @@
               </div>
             </div>
             <hr class="my-3 md:hidden" />
+
             <div
               class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-3 relative md:flex md:flex-col md:items-end md:px-5"
             >
               <div
                 class="hidden md:block rounded-full absolute h-3 w-3 bg-black -right-[6px] top-3"
+                style="right: -6.5px"
               ></div>
 
               <h3
@@ -362,17 +367,19 @@
                 />
               </h3>
               <hr class="my-2" />
-              <p class="leading-tight text-justify text-sm md:w-96">
+              <p class="work-description">
                 Maintain office network and troubleshooting computer make sure
                 all operation all working properly
               </p>
             </div>
+
             <hr class="my-3 md:hidden" />
             <div
               class="md:border-r border-black w-full p-2 md:pl-5 col-start-1 row-start-4 relative md:flex md:flex-col md:items-end md:px-5"
             >
               <div
                 class="hidden md:block rounded-full absolute h-3 w-3 bg-black -right-[6px] top-3"
+                style="right: -6.5px"
               ></div>
 
               <h3
@@ -387,25 +394,17 @@
                 />
               </h3>
               <hr class="my-2" />
-              <p class="leading-tight text-justify text-sm md:w-96 md:text-end">
+              <p class="work-description">
                 Working as business development role concurrently as fullstack
                 developer at Akastra Toyota
               </p>
 
-              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
-                <div
-                  class="border border-[#FCC331] py-2 px-3 text-sm font-semibold w-full whitespace-nowrap"
-                >
-                  2020-09-01 - Present
-                </div>
-                <a
-                  href="#portfolio"
-                  target="_blank"
-                  class="w-full md:w-fit whitespace-nowrap font-semibold border border-[#FCC331] py-2 px-3 bg-[#FCC331] hover:bg-transparent duration-300"
-                >
+              <div class="work-button">
+                <a href="#portfolio" target="_blank" class="work-cta">
+                  <i class="fa-solid fa-arrow-left mr-2"></i>
                   See My Portfolio
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
+                <div class="work-period">2020-09-01 - Present</div>
               </div>
             </div>
             <hr class="my-3 md:hidden" />
@@ -601,7 +600,7 @@
       <!-- Portfolio -->
       <section
         id="portfolio"
-        class="min-h-screen bg-[#F6F6F6] flex flex-col py-5 items-center px-5 md:px-10"
+        class="min-h-screen secondary-background flex flex-col py-5 items-center px-5 md:px-10"
       >
         <div
           class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10"
@@ -772,7 +771,8 @@
         <div class="h-2 w-full bg-black"></div>
 
         <div
-          class="bg-[#FDBE1C] w-full flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center py-8 px-10"
+          class="w-full flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center py-8 px-10"
+          style="background-color: #fdbe1c"
         >
           <div class="flex flex-col items-center">
             <img
@@ -861,5 +861,6 @@
     </main>
 
     <script src="./script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>
