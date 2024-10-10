@@ -38,8 +38,15 @@
       href="./assets/images/logo.svg"
       type="image/x-icon"
     />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
+    <script>
+      AOS.init();
+    </script>
+
     <main class="bg-black">
       <!-- Navbar -->
       <nav
@@ -335,7 +342,7 @@
                 company. Help manage their IoT Devices Code.
               </p>
 
-              <div class="work-button">
+              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
                 <div class="work-period">2019-09-01 - 2020-02-01</div>
                 <a
                   href="https://www.instagram.com/stories/highlights/17936089366581322/"
@@ -387,7 +394,7 @@
               <h3
                 class="font-bold text-lg mb-1 flex items-center flex-row-reverse gap-5"
               >
-                Business Dev'l | Fullstack Developer
+                Fullstack Developer
 
                 <img
                   src="https://akastra.id/assets/img/static/logo.png"
@@ -401,7 +408,7 @@
                 developer at Akastra Toyota
               </p>
 
-              <div class="work-button">
+              <div class="flex flex-col md:flex-row items-center mt-4 gap-3">
                 <a href="#portfolio" target="_blank" class="work-cta">
                   <i class="fa-solid fa-arrow-left mr-2"></i>
                   See My Portfolio
@@ -420,7 +427,7 @@
       <!-- Working -->
       <section
         id="work"
-        class="bg-gray-100 flex flex-col py-10 items-center p-5"
+        class="bg-gray-100 flex flex-col py-10 items-center p-5 overflow-hidden"
       >
         <div
           class="flex flex-col w-full md:w-1/2 gap-2 text-center z-10 mb-5"
@@ -438,10 +445,11 @@
 
         <!-- Desktop -->
         <div
-          class="hidden w-full md:flex flex-row overflow-auto md:grid grid-rows-2 grid-cols-5 w-11/12 h-fit md:h-96 items-center justify-items-center gap-2"
+          class="hidden w-full md:flex flex-row overflow-auto md:grid grid-rows-2 grid-cols-5 w-11/12 h-fit md:h-96 items-center justify-items-center gap-2 overflow-hidden"
         >
           <div class="w-full h-full rounded-md row-span-2 col-span-2">
             <img
+              data-aos="fade-up"
               src="./assets/images/portfolio/annual-meeting-2023.webp"
               alt="annual-meeting-2023"
               class="object-cover h-full w-full rounded-sm w-full"
@@ -452,6 +460,7 @@
             <img
               src="./assets/images/portfolio/alibaba-cloud-developer-summit.webp"
               alt="alibaba-cloud-developer-summit"
+              data-aos="fade-up"
               class="object-cover h-full rounded-sm w-full"
             />
           </div>
@@ -459,6 +468,7 @@
             <img
               src="./assets/images/portfolio/annual-meeting-2022.webp"
               alt="annual-meeting-2022"
+              data-aos="fade-up"
               class="object-cover h-full w-full rounded-sm"
             />
           </div>
@@ -466,6 +476,7 @@
             <img
               src="./assets/images/portfolio/iot.webp"
               alt="SDY Labs"
+              data-aos="fade-up"
               class="object-cover h-full w-full rounded-sm"
             />
           </div>
@@ -473,6 +484,7 @@
             <img
               src="./assets/images/portfolio/evaluation-meeting.webp"
               alt="evaluation-1-meeting"
+              data-aos="fade-up"
               class="object-cover h-full w-fit md:w-full rounded-sm"
             />
           </div>
@@ -480,6 +492,7 @@
             <img
               src="./assets/images/portfolio/evaluation-1-meeting.webp"
               alt="evaluation-1-meeting"
+              data-aos="fade-up"
               class="object-cover h-full rounded-sm w-full"
             />
           </div>
@@ -576,11 +589,79 @@
         <hr class="my-2" />
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-          <img src="./assets/images/android.png" alt="android" />
-          <img src="./assets/images/kotlin.png" alt="kotlin" />
-          <img src="./assets/images/pcap.png" alt="pcap" />
-          <img src="./assets/images/MTCNA.jpg" alt="MTCNA" />
+          <!-- Images with click event -->
+          <img
+            src="./assets/images/android_beginner.webp"
+            alt="android"
+            data-aos="zoom-in-right"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/android_beginner.webp')"
+          />
+          <img
+            src="./assets/images/kotlin.webp"
+            alt="kotlin"
+            data-aos="zoom-in-down"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/kotlin.webp')"
+          />
+          <img
+            src="./assets/images/basic_ai.webp"
+            alt="artificial-intelligence"
+            data-aos="zoom-in-down"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/basic_ai.webp')"
+          />
+          <img
+            src="./assets/images/pcap.webp"
+            alt="pcap"
+            data-aos="zoom-in-down"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/pcap.webp')"
+          />
+          <img
+            src="./assets/images/mtcna.webp"
+            alt="MTCNA"
+            data-aos="zoom-in-left"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/mtcna.webp')"
+          />
+          <img
+            src="./assets/images/database.webp"
+            alt="Database"
+            data-aos="zoom-in-left"
+            class="cursor-pointer"
+            onclick="showModal('./assets/images/database.webp')"
+          />
         </div>
+
+        <div
+          id="imageModal"
+          class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
+        >
+          <div class="relative">
+            <button
+              class="absolute top-0 right-0 text-white text-3xl p-2 bg-sky-700"
+              onclick="closeModal()"
+            >
+              &times;
+            </button>
+            <img id="modalImage" class="max-w-full max-h-screen rounded-lg" />
+          </div>
+        </div>
+
+        <script>
+          function showModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+          }
+
+          function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+          }
+        </script>
 
         <div class="flex justify-center w-full p-5">
           <a
@@ -622,6 +703,7 @@
             <img
               src="./assets/images/portfolio/akastra-website.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -676,6 +758,7 @@
             <img
               src="./assets/images/portfolio/ksc.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -724,6 +807,7 @@
             <img
               src="./assets/images/portfolio/easytask.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -773,6 +857,7 @@
             <img
               src="./assets/images/portfolio/bni.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -819,6 +904,7 @@
             <img
               src="./assets/images/portfolio/akastra-mobile.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -834,6 +920,7 @@
             <img
               src="./assets/images/portfolio/wac.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -883,6 +970,7 @@
             <img
               src="./assets/images/portfolio/parking.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -931,6 +1019,7 @@
             <img
               src="./assets/images/portfolio/amdk.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 
@@ -943,6 +1032,7 @@
             <img
               src="./assets/images/portfolio/cafe.png"
               alt="Akastra Website"
+              data-aos="fade-up"
               class="object-contain w-full mb-5"
             />
 

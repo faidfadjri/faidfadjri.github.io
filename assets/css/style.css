@@ -98,6 +98,16 @@
   border-color: var(--color);
 }
 
+@media (max-width: 768px) {
+  .work-cta {
+    width: 100%;
+  }
+
+  .work-period {
+    width: 100%;
+  }
+}
+
 .work-description {
   line-height: 1.25;
   text-align: justify;
